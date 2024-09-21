@@ -4,7 +4,7 @@ recipe: default.v1
 
 # The assistant project unique identifier
 # This default value must be replaced with a unique assistant name within your deployment
-assistant_id: placeholder_default
+assistant_id: 20240825-125533-olive-double
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/

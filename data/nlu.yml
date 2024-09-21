@@ -89,3 +89,25 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: ask_sport_type
+  examples: |
+    - What sport is being played today?
+    - Which sports event is happening right now?
+    - What kind of sports match is happening today?
+    - What sport is scheduled for today’s event?
+    - What game is being played today?
+    - Which sport is featured in today’s match?
+    - What kind of sports match is taking place at the moment?
+  
+- intent: ask_match_location
+  examples: |
+    - Where are [team1](team) and [team2](team) playing today?
+    - Where is the match between [team1](team) and [team2](team)?
+    - What's the location of [team1](team) vs [team2](team) game?
+    - Where can I watch [team1](team) play against [team2](team)?
+    - What stadium are [team1](team) and [team2](team) using today?
+
+- regex: team
+  examples: |
+    - \b[\w\s]+\b

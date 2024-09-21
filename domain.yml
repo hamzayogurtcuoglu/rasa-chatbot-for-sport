@@ -7,7 +7,22 @@ intents:
   - deny
   - mood_great
   - mood_unhappy
-  - bot_challenge
+  - bot_challenge 
+  - ask_match_location
+
+entities:
+  - team
+
+slots:
+  teams:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: team
+  
+actions:
+  - action_match_location
 
 responses:
   utter_greet:
@@ -28,6 +43,16 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+
+  utter_answer_sport_type:
+    - text: "A football match is being played today."
+    - text: "There is a football game happening right now."
+    - text: "Today event is a football match."
+    - text: "It is a football game happening today."
+    - text: "Football is the scheduled sport for today event." 
+    - text: "Football is the featured sport in today match." 
+    - text: "At the moment, a football match is taking place." 
 
 session_config:
   session_expiration_time: 60

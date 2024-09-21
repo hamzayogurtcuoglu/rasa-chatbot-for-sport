@@ -11,3 +11,13 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Answer sport type for football
+  steps:
+  - intent: ask_sport_type
+  - action: utter_answer_sport_type
+
+- rule: Ask match location
+  steps:
+  - intent: ask_match_location
+  - action: action_match_location
