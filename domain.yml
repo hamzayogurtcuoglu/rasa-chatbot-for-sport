@@ -9,21 +9,42 @@ intents:
   - mood_unhappy
   - bot_challenge 
   - ask_match_location
+  - ask_match_score
+  - ask_match_scorers
+  - ask_tournament_info
+  - ask_stadium_capacity
 
 entities:
-  - team
+  - team1
+  - team2
+  - stadium
 
 slots:
-  teams:
-    type: list
-    influence_conversation: true
+  team1:
+    type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
-      entity: team
+      entity: team1
+  team2:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: team2
+  stadium:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: stadium
   
 actions:
   - action_match_location
-
+  - action_match_score
+  - action_match_scorers
+  - action_stadium_capacity
+  
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -52,7 +73,12 @@ responses:
     - text: "It is a football game happening today."
     - text: "Football is the scheduled sport for today event." 
     - text: "Football is the featured sport in today match." 
-    - text: "At the moment, a football match is taking place." 
+    - text: "At the moment, a football match is taking place."
+  
+  utter_answer_tournament_info:
+    - text: "This match is part of the Champions League."
+    - text: "The match belongs to the Europa League."
+  
 
 session_config:
   session_expiration_time: 60

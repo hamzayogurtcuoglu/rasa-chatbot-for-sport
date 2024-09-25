@@ -17,7 +17,27 @@ rules:
   - intent: ask_sport_type
   - action: utter_answer_sport_type
 
+- rule: Answer tournament info
+  steps:
+  - intent: ask_tournament_info
+  - action: utter_answer_tournament_info
+
 - rule: Ask match location
   steps:
   - intent: ask_match_location
   - action: action_match_location
+
+- rule: Ask match score
+  steps:
+  - intent: ask_match_score
+  - action: action_match_score
+
+- rule: Ask match scorers
+  steps:
+  - intent: ask_match_scorers
+  - action: action_match_scorers
+
+- rule: Ask stadium capacity
+  steps:
+  - intent: ask_stadium_capacity
+  - action: action_stadium_capacity

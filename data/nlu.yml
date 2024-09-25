@@ -99,15 +99,155 @@ nlu:
     - What game is being played today?
     - Which sport is featured in today’s match?
     - What kind of sports match is taking place at the moment?
-  
+
+- intent: ask_tournament_info
+  examples: |
+    - Which tournament is this match part of?
+    - Can you tell me what competition this match belongs to?
+    - What tournament is today’s game part of?
+    - What championship is today’s match part of?
+    - Can you tell me which tournament this match is in?
+    - Is today’s game part of a specific tournament?
+    - What competition is being played today?
+    - What championship is this football match associated with?
+
 - intent: ask_match_location
   examples: |
-    - Where are [team1](team) and [team2](team) playing today?
-    - Where is the match between [team1](team) and [team2](team)?
-    - What's the location of [team1](team) vs [team2](team) game?
-    - Where can I watch [team1](team) play against [team2](team)?
-    - What stadium are [team1](team) and [team2](team) using today?
+    - Where are [Barcelona](team1) and [Real Madrid](team2) playing today?
+    - Where is the match between [Manchester United](team1) and [Liverpool](team2)?
+    - What's the location of [Bayern Munich](team1) vs [Borussia Dortmund](team2) game?
+    - Where can I watch [AC Milan](team1) play against [Inter Milan](team2)?
+    - What stadium are [Juventus](team1) and [Paris Saint-Germain](team2) using today?
+    - Where do [Chelsea](team1) and [Arsenal](team2) play today?
+    - What's the location of [Galatasaray](team1) and [Fenerbahçe](team2)?
+    - Where is the match between [Beşiktaş](team1) and [Fenerbahçe](team2)?
+    - What's the location of [Atletico Madrid](team1) vs [Valencia](team2)?
+    - Where can I watch [Tottenham Hotspur](team1) play against [Manchester City](team2)?
+    - What stadium are [Ajax](team1) and [Feyenoord](team2) using today?
+    - Where are [Celtic](team1) and [Rangers](team2) playing today?
+    - Where is the match between [River Plate](team1) and [Boca Juniors](team2)?
+    - What's the location of [Flamengo](team1) vs [Juventus](team2)?
+    - Where can I watch [Benfica](team1) play against [Porto](team2)?
+    - What stadium are [Hertha Berlin](team1) and [Marseille](team2) using today?
+    - Where do [AS Roma](team1) and [Juventus](team2) play today?
+    - What's the location of [Manchester City](team1) and [Manchester United](team2)?
+    - Where is the match between [Galatasaray](team1) and [Beşiktaş](team2)?
+    - Where are [Barcelona](team1) and [Bayern Munich](team2) playing today?
+    - What stadium will [Inter Milan](team1) and [Juventus](team2) use today?
+    - Where is [Porto](team1) playing against [Benfica](team2)?
+    - What's the location of [AC Milan](team1) vs [Atletico Madrid](team2) game?
+    - What stadium are [Paris Saint-Germain](team1) and [Chelsea](team2) playing in today?
 
-- regex: team
+- intent: ask_match_score
   examples: |
-    - \b[\w\s]+\b
+    - What is the score of [Barcelona](team1) vs [Real Madrid](team2)?
+    - Can you tell me the score of [Manchester United](team1) against [Chelsea](team2)?
+    - How many goals have been scored by [Liverpool](team1) and [Manchester City](team2)?
+    - Who is leading in the [Juventus](team1) vs [AC Milan](team2) match?
+    - What’s the scoreline for [PSG](team1) vs [Lyon](team2)?
+    - What’s the result for [Bayern Munich](team1) and [Borussia Dortmund](team2)?
+    - What’s the current score for [Inter Milan](team1) and [Napoli](team2)?
+    - Can you tell me how many goals [Arsenal](team1) and [Tottenham](team2) have scored?
+    - How many goals have [Roma](team1) and [Lazio](team2) scored so far?
+    - Who is winning in the match between [Sevilla](team1) and [Valencia](team2)?
+    - What is the result for [Ajax](team1) against [Feyenoord](team2)?
+    - What’s the score of [Atletico Madrid](team1) vs [Barcelona](team2)?
+    - How many goals have been scored in the game between [Galatasaray](team1) and [Fenerbahce](team2)?
+    - What’s the result for the [Besiktas](team1) vs [Trabzonspor](team2) match?
+    - Who is leading in the game between [Leipzig](team1) and [Bayer Leverkusen](team2)?
+    - What’s the score for [Tottenham](team1) and [West Ham](team2)?
+    - Can you tell me the current result for [Real Betis](team1) and [Celta Vigo](team2)?
+    - What’s the scoreline for [Everton](team1) against [Leeds United](team2)?
+    - How many goals have [Wolves](team1) and [Aston Villa](team2) scored so far?
+
+- intent: ask_match_scorers
+  examples: |
+    - Who scored for [Barcelona](team1) against [Real Madrid](team2)?
+    - Can you tell me the goal scorers in the match between [Manchester United](team1) and [Chelsea](team2)?
+    - Who were the players that found the net in the [Liverpool](team1) vs [Manchester City](team2) game?
+    - What players scored goals for [Juventus](team1) in today’s match?
+    - Which players have put their names on the score sheet in the [AC Milan](team1) and [Inter Milan](team2) match?
+    - Who are the goal scorers in the [PSG](team1) vs [Lyon](team2) game?
+    - What players found the net in the match between [Bayern Munich](team1) and [Borussia Dortmund](team2)?
+    - Who scored for [Roma](team1) against [Lazio](team2)?
+    - Who are the goal scorers in today’s [Sevilla](team1) vs [Valencia](team2) game?
+    - Who put their names on the score sheet in the [Tottenham](team1) vs [West Ham](team2) game?
+    - Can you tell me who scored in the match between [Ajax](team1) and [Feyenoord](team2)?
+    - Who scored for [Atletico Madrid](team1) in today’s game against [Barcelona](team2)?
+    - Who scored in today’s match between [Galatasaray](team1) and [Fenerbahce](team2)?
+    - What players scored goals for [Celtic](team1) and [Rangers](team2) in today’s match?
+    - Can you tell me the goal scorers in the [Real Sociedad](team1) vs [Villareal](team2) game?
+    - Who found the net in the [Leicester City](team1) and [Newcastle](team2) game?
+    - Who scored in the match between [Burnley](team1) and [Sheffield United](team2)?
+    - Who were the scorers in the game between [Anderlecht](team1) and [Club Brugge](team2)?
+    - Who found the net in the [Besiktas](team1) vs [Trabzonspor](team2) match?
+    - Which players scored in today’s [Real Betis](team1) vs [Celta Vigo](team2) game?
+
+- intent: ask_stadium_capacity
+  examples: |
+    - What is the capacity of [camp nou](stadium)?
+    - How many people can [santiago bernabeu](stadium) hold?
+    - Can you tell me the seating capacity of [old trafford](stadium)?
+    - How large is [allianz arena](stadium) in terms of capacity?
+    - What’s the maximum capacity of [anfield](stadium)?
+    - How many spectators can fit into [stamford bridge](stadium)?
+    - Can you tell me how many seats are in [san siro](stadium)?
+    - What’s the size of the crowd that can attend a match at [emirates stadium](stadium)?
+    - What is the capacity of [signal iduna park](stadium)?
+    - How many people can [parc des princes](stadium) hold?
+    - Can you tell me the seating capacity of [juventus stadium](stadium)?
+    - How large is [wanda metropolitano](stadium) in terms of capacity?
+    - What’s the maximum capacity of [tottenham hotspur stadium](stadium)?
+    - How many spectators can fit into [estadio do dragao](stadium)?
+    - Can you tell me how many seats are in [estadio da luz](stadium)?
+    - What’s the size of the crowd that can attend a match at [celtic park](stadium)?
+    - What is the capacity of [ibrox stadium](stadium)?
+    - How many people can [amsterdam arena](stadium) hold?
+    - Can you tell me the seating capacity of [de kuip](stadium)?
+    - How large is [estadio mestalla](stadium) in terms of capacity?
+    - What’s the maximum capacity of [olympiastadion](stadium)?
+    - How many spectators can fit into [stade velodrome](stadium)?
+    - Can you tell me how many seats are in [etihad stadium](stadium)?
+    - What’s the size of the crowd that can attend a match at [stadio olimpico](stadium)?
+    - What is the capacity of [estadio monumental](stadium)?
+    - How many people can [la bombonera](stadium) hold?
+    - Can you tell me the seating capacity of [maracana stadium](stadium)?
+    - How large is [turk telekom arena](stadium) in terms of capacity?
+    - What’s the maximum capacity of [vodafone park](stadium)?
+    - How many spectators can fit into [sukru saracoglu stadium](stadium)?
+
+
+
+lookup: team
+examples: |
+  - Barcelona
+  - Real Madrid
+  - Manchester United
+  - Liverpool
+  - Bayern Munich
+  - Borussia Dortmund
+  - AC Milan
+  - Inter Milan
+  - Juventus
+  - Paris Saint-Germain
+  - Chelsea
+  - Arsenal
+  - Galatasaray
+  - Fenerbahçe
+  - Beşiktaş
+  - Atletico Madrid
+  - Valencia
+  - Tottenham Hotspur
+  - Manchester City
+  - Ajax
+  - Feyenoord
+  - Celtic
+  - Rangers
+  - River Plate
+  - Boca Juniors
+  - Flamengo
+  - Benfica
+  - Porto
+  - Hertha Berlin
+  - Marseille
+  - AS Roma
