@@ -217,6 +217,61 @@ nlu:
     - How many spectators can fit into [sukru saracoglu stadium](stadium)?
 
 
+- intent: ask_match_referee
+  examples: |
+    - Who was the referee in the match between [Barcelona](team1) and [Real Madrid](team2)?
+    - Can you tell me the referee for the [Manchester United](team1) vs [Chelsea](team2) game?
+    - Who officiated the match between [Liverpool](team1) and [Manchester City](team2)?
+    - Who was the referee for the [Juventus](team1) and [AC Milan](team2) match?
+    - Which referee was assigned to the [PSG](team1) vs [Lyon](team2) game?
+    - Who was the referee in the game between [Bayern Munich](team1) and [Borussia Dortmund](team2)?
+    - Who officiated today’s match between [Roma](team1) and [Lazio](team2)?
+    - Can you tell me who the referee was for the [Sevilla](team1) vs [Valencia](team2) match?
+    - Who was the official referee in the [Tottenham](team1) vs [West Ham](team2) game?
+    - Who refereed the [Galatasaray](team1) vs [Fenerbahce](team2) match?
+
+
+- intent: ask_match_yellow_cards
+  examples: |
+    - Who received yellow cards in the [Barcelona](team1) vs [Real Madrid](team2) game?
+    - Can you tell me the players who got yellow cards in the [Manchester United](team1) vs [Chelsea](team2) match?
+    - Who were the players with yellow cards in the match between [Liverpool](team1) and [Manchester City](team2)?
+    - Which players got yellow cards in today’s [Juventus](team1) vs [AC Milan](team2) match?
+    - Were there any yellow cards in the [PSG](team1) vs [Lyon](team2) game?
+    - Can you tell me the players who got yellow cards in the [Bayern Munich](team1) vs [Borussia Dortmund](team2) game?
+    - Who received yellow cards in the [Roma](team1) vs [Lazio](team2) match?
+    - Who were the yellow carded players in the [Sevilla](team1) vs [Valencia](team2) game?
+    - Were there any yellow cards in the [Tottenham](team1) vs [West Ham](team2) match?
+    - Which players were shown yellow cards in the [Galatasaray](team1) vs [Fenerbahce](team2) game?
+
+
+- intent: ask_match_red_cards
+  examples: |
+    - Were there any red cards in the match between [Barcelona](team1) and [Real Madrid](team2)?
+    - Can you tell me who received a red card in the [Manchester United](team1) vs [Chelsea](team2) game?
+    - Who was shown a red card in the [Liverpool](team1) vs [Manchester City](team2) match?
+    - Which players got red cards in the [Juventus](team1) vs [AC Milan](team2) game?
+    - Was there a red card in the [PSG](team1) vs [Lyon](team2) match?
+    - Who was sent off with a red card in the [Bayern Munich](team1) vs [Borussia Dortmund](team2) game?
+    - Can you tell me the players who were shown red cards in the [Roma](team1) vs [Lazio](team2) match?
+    - Who received a red card in the [Sevilla](team1) vs [Valencia](team2) game?
+    - Were there any red cards in the [Tottenham](team1) vs [West Ham](team2) match?
+    - Which player got a red card in the [Galatasaray](team1) vs [Fenerbahce](team2) match?
+
+
+- intent: ask_match_weather
+  examples: |
+    - What was the weather like during the match between [Barcelona](team1) and [Real Madrid](team2)?
+    - Can you tell me the weather in the [Manchester United](team1) vs [Chelsea](team2) game?
+    - What was the weather condition during the [Liverpool](team1) vs [Manchester City](team2) match?
+    - How was the weather in today’s [Juventus](team1) vs [AC Milan](team2) match?
+    - What was the weather like for the [PSG](team1) vs [Lyon](team2) game?
+    - What was the weather condition in the [Bayern Munich](team1) vs [Borussia Dortmund](team2) match?
+    - Can you tell me what the weather was like in the [Roma](team1) vs [Lazio](team2) game?
+    - How was the weather in the [Sevilla](team1) vs [Valencia](team2) match?
+    - What was the weather like during the [Tottenham](team1) vs [West Ham](team2) match?
+    - What was the weather like for the [Galatasaray](team1) vs [Fenerbahce](team2) game?
+
 
 lookup: team
 examples: |

@@ -11,20 +11,10 @@ class ActionMatchScore(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        # Kullanıcı mesajını al
-        user_message = tracker.latest_message.get('text', '')
-        
-        # Mesajı kelimelere ayır
-        words = user_message.split()
-        
-        # "and" kelimesinin indekslerini bul
-        and_indices = [i for i, word in enumerate(words) if word.lower() == 'and']
-        print(and_indices)
-        if and_indices:
-            # "and" kelimesinin öncesindeki ve sonrasındaki kelimeleri takım isimleri olarak al
-            team1 = ' '.join(words[max(0, and_indices[0]-1):and_indices[0]])
-            team2 = ' '.join(words[and_indices[0]+1:and_indices[0]+2])
-            
+        team1 = tracker.get_slot("team1")
+        team2 = tracker.get_slot("team2")
+        if team1 and team2:
+                   
             # Takım skorunu al
             info = get_match_info(team1, team2)  # Bu fonksiyonu kendi veri tabanı fonksiyonuna göre güncelle
             if info:

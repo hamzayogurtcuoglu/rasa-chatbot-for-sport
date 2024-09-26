@@ -13,6 +13,10 @@ intents:
   - ask_match_scorers
   - ask_tournament_info
   - ask_stadium_capacity
+  - ask_match_weather
+  - ask_match_red_cards
+  - ask_match_yellow_cards
+  - ask_match_referee
 
 entities:
   - team1
@@ -44,6 +48,10 @@ actions:
   - action_match_score
   - action_match_scorers
   - action_stadium_capacity
+  - action_match_weather
+  - action_match_red_cards
+  - action_match_yellow_cards
+  - action_match_referee
   
 responses:
   utter_greet:
@@ -64,7 +72,6 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
-
 
   utter_answer_sport_type:
     - text: "A football match is being played today."

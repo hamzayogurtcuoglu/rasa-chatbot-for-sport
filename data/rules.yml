@@ -41,3 +41,23 @@ rules:
   steps:
   - intent: ask_stadium_capacity
   - action: action_stadium_capacity
+
+- rule: Ask match weather
+  steps:
+  - intent: ask_match_weather
+  - action: action_match_weather
+
+- rule: Ask match red cards
+  steps:
+  - intent: ask_match_red_cards
+  - action: action_match_red_cards
+
+- rule: Ask match yellow cards
+  steps:
+  - intent: ask_match_yellow_cards
+  - action: action_match_yellow_cards
+
+- rule: Ask match referee
+  steps:
+  - intent: ask_match_referee
+  - action: action_match_referee

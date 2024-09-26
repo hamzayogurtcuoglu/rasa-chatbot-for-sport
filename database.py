@@ -16,16 +16,21 @@ def create_database():
 
     # Match scores table creation
     c.execute('''
-        CREATE TABLE IF NOT EXISTS match_scores (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            team1 TEXT NOT NULL,
-            team2 TEXT NOT NULL,
-            team1_score INTEGER NOT NULL,
-            team2_score INTEGER NOT NULL,
-            scorers_team1 TEXT,  -- Gol atan oyuncular, virgülle ayrılmış
-            scorers_team2 TEXT   -- Gol atan oyuncular, virgülle ayrılmış
+    CREATE TABLE IF NOT EXISTS match_scores (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        team1 TEXT NOT NULL,
+        team2 TEXT NOT NULL,
+        team1_score INTEGER NOT NULL,
+        team2_score INTEGER NOT NULL,
+        scorers_team1 TEXT,      -- Gol atan oyuncular, virgülle ayrılmış
+        scorers_team2 TEXT,      -- Gol atan oyuncular, virgülle ayrılmış
+        referee TEXT,            -- Maçın hakemi
+        yellow_cards TEXT,       -- Sarı kart gören oyuncular, virgülle ayrılmış
+        red_cards TEXT,          -- Kırmızı kart gören oyuncular, virgülle ayrılmış
+        weather TEXT             -- Maç sırasındaki hava durumu
         )
     ''')
+
 
     conn.commit()
     conn.close()
@@ -79,6 +84,67 @@ def get_match_info(team1, team2):
         return None  # Eğer maç bulunamazsa None döner
 
 
+def get_match_referee(team1, team2):
+    conn = sqlite3.connect('football.db')
+    c = conn.cursor()
+    c.execute('''
+        SELECT referee 
+        FROM match_scores 
+        WHERE team1 = ? AND team2 = ?
+    ''', (team1, team2))
+    result = c.fetchone()
+    conn.close()
+    if result:
+        return result[0]  # referee
+    else:
+        return None  # Eğer maç bulunamazsa None döner
+
+def get_match_yellow_cards(team1, team2):
+    conn = sqlite3.connect('football.db')
+    c = conn.cursor()
+    c.execute('''
+        SELECT yellow_card 
+        FROM match_scores 
+        WHERE team1 = ? AND team2 = ?
+    ''', (team1, team2))
+    result = c.fetchone()
+    conn.close()
+    if result:
+        return result[0]  # yellow_card
+    else:
+        return None  # Eğer maç bulunamazsa None döner
+
+def get_match_red_cards(team1, team2):
+    conn = sqlite3.connect('football.db')
+    c = conn.cursor()
+    c.execute('''
+        SELECT red_card 
+        FROM match_scores 
+        WHERE team1 = ? AND team2 = ?
+    ''', (team1, team2))
+    result = c.fetchone()
+    conn.close()
+    if result:
+        return result[0]  # red_card
+    else:
+        return None  # Eğer maç bulunamazsa None döner
+
+def get_match_weather(team1, team2):
+    conn = sqlite3.connect('football.db')
+    c = conn.cursor()
+    c.execute('''
+        SELECT weather 
+        FROM match_scores 
+        WHERE team1 = ? AND team2 = ?
+    ''', (team1, team2))
+    result = c.fetchone()
+    conn.close()
+    if result:
+        return result[0]  # weather
+    else:
+        return None  # Eğer maç bulunamazsa None döner
+
+
 def add_stadium(stadium_name, city, capacity, team):
     conn = sqlite3.connect('football.db')
     c = conn.cursor()
@@ -87,13 +153,13 @@ def add_stadium(stadium_name, city, capacity, team):
     conn.commit()
     conn.close()
 
-def add_match_scores(team1, team2, team1_score, team2_score, scorers_team1, scorers_team2):
+def add_match_scores(team1, team2, team1_score, team2_score, scorers_team1, scorers_team2, referee, yellow_cards, red_cards, weather):
     conn = sqlite3.connect('football.db')
     c = conn.cursor()
     c.execute('''
-        INSERT INTO match_scores (team1, team2, team1_score, team2_score, scorers_team1, scorers_team2) 
-        VALUES (?, ?, ?, ?, ?, ?)
-    ''', (team1, team2, team1_score, team2_score, scorers_team1, scorers_team2))
+        INSERT INTO match_scores (team1, team2, team1_score, team2_score, scorers_team1, scorers_team2, referee, yellow_cards, red_cards, weather) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (team1, team2, team1_score, team2_score, scorers_team1, scorers_team2, referee, yellow_cards, red_cards, weather))
     conn.commit()
     conn.close()
 
