@@ -33,12 +33,10 @@ stadiums = [
     ("sukru saracoglu stadium", "istanbul", 50530, "fenerbahce")
 ]
 
-# Stadyumları eklemek
 for stadium in stadiums:
     add_stadium(*stadium)
 
 
-# 30 farklı match eklemek
 add_match_scores("barcelona", "real madrid", 2, 1, "messi", "benzema", referee="Antonio Mateu Lahoz", yellow_cards="Pique, Kroos", red_cards="None", weather="Clear")
 add_match_scores("manchester united", "chelsea", 3, 2, "rashford, fernandes", "havertz", referee="Michael Oliver", yellow_cards="Maguire, Azpilicueta", red_cards="None", weather="Rainy")
 add_match_scores("liverpool", "manchester city", 1, 1, "salah", "de bruyne", referee="Martin Atkinson", yellow_cards="Robertson, Walker", red_cards="None", weather="Windy")
